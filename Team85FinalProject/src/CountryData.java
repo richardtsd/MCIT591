@@ -1,6 +1,13 @@
 import java.time.LocalDate;
 import java.util.ArrayList;
 
+/**
+ * 
+ * This is the class which stores times series data on total case count, incremental case count for various countries 
+ * @author USER
+ *
+ */
+
 public class CountryData {
 
 

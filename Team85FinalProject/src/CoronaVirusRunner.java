@@ -1,3 +1,9 @@
+/**
+ * This is the class which has the main method
+ * 
+ * @author USER
+ *
+ */
 
 public class CoronaVirusRunner {
 
@@ -6,7 +12,11 @@ public class CoronaVirusRunner {
 		CoronaVirus myAnalysis = new CoronaVirus ();
 		myAnalysis.readFile();
 		myAnalysis.processData();
-		myAnalysis.printData();
+		// myAnalysis.printData();
+
+		
+		System.out.println(myAnalysis.mostCaseCountry());
+		// myAnalysis.mostGrowthCountry();
 	}
 
 }
