@@ -42,8 +42,9 @@ public class CoronaVirus {
 
 	/**
 	 * this method processes data, as some countries (such as Australia) have
-	 * multiple lines in the original datafile, representing different provinces.
-	 * This method aggregates the data for the entire country
+	 * multiple lines in the original datafile, representing case count from
+	 * different provinces. This method aggregates the data for the entire country,
+	 * using Hashmap
 	 */
 	public void processData() {
 		HashMap<String, ArrayList<Integer>> countrytoTotalCount = new HashMap<String, ArrayList<Integer>>(); // some
@@ -76,6 +77,11 @@ public class CoronaVirus {
 
 	}
 
+	/**
+	 * This prints the latest case count, latest incremental count for all
+	 * countries;
+	 */
+
 	public void printData() {
 		System.out.println("Country | Latest Cumulative Case | Lastest Incremental Case");
 		for (int i = 0; i < allCountryData.size(); i++) {
@@ -86,33 +92,34 @@ public class CoronaVirus {
 	}
 
 	/**
-	 * Find the country with most cases 
+	 * Find the country with most cases
+	 * 
 	 * @return
 	 */
-	
+
 	public String mostCaseCountry() {
 		int mostCase = 0;
 		String mostCountry = null;
 
 		for (int i = 0; i < allCountryData.size(); i++) {
 			int maxDay = allCountryData.get(i).totalCaseCount.size();
-			
+
 			if (allCountryData.get(i).totalCaseCount.get(maxDay - 1) > mostCase) {
 				mostCase = allCountryData.get(i).totalCaseCount.get(maxDay - 1);
 				mostCountry = allCountryData.get(i).countryRegionName;
 			}
 
-			
 		}
-		
 
-		// System.out.println(mostCountry + " has the most cumulative cases as of latest day");
+		// System.out.println(mostCountry + " has the most cumulative cases as of latest
+		// day");
 		return mostCountry;
 	}
 
-/*	public String mostIncrementalCaseCountry() {
-		
-	} */
-	
-	
+	/*
+	 * public String mostIncrementalCaseCountry() {
+	 * 
+	 * }
+	 */
+
 }
